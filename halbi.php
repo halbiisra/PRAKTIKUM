@@ -1,17 +1,14 @@
 <?php
 
 class produk{
-
-    //property
     public string $kode;
     public string $nama;
     public float $harga;
     public int $stok;
-
     // constant
     public const pajak = 0.11;
 
-    public funstion __construck($kode, $nama, $harga, $stok) {
+    public function __construct($kode, $nama, $harga, $stok) {
         $this->kode = $kode;
         $this->nama = $nama;
         $this->harga = $harga;
