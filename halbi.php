@@ -2,27 +2,78 @@
 
 namespace PRAKTIKUM\Marketplace;
 
-class produk{
-    public string $kode;
-    public string $nama;
-    public float $harga;
-    public int $stok;
+class produk
+{
+    private string $kode;
+    private string $nama;
+    private float $harga;
+    private int $stok;
     // constant
     public const pajak = 0.11;
 
-    public function __construct($kode, $nama, $harga, $stok) {
+    public function __construct()
+    {
+
+    }
+
+    //setter
+    public function setKode($kode)
+    {
         $this->kode = $kode;
+        return $this;
+    }
+
+    public function setNama($nama)
+    {
         $this->nama = $nama;
+        return $this;
+    }
+
+    public function setHarga($harga)
+    {
+        if ($harga <= 0) {
+            echo "harga tidak boleh 0";
+            exit();
+        }
         $this->harga = $harga;
+        return $this;
+    }
+
+    public function setStok($stok)
+    {
         $this->stok = $stok;
+        return $this;
     }
 
-    public function pajak(){
-        return  self::pajak * 100;
+
+    //getter
+    public function getKode()
+    {
+        return $this->kode;
+    }
+    public function getNama()
+    {
+        return $this->nama;
     }
 
-    public function total(){
-        return $this->harga + ($this->harga*self::pajak);
+    public function getHarga()
+    {
+        return $this->harga;
+    }
+
+    public function getStok()
+    {
+        return $this->stok;
+    }
+
+    public function pajak()
+    {
+        return self::pajak * 100;
+    }
+
+    public function total()
+    {
+        return $this->harga + ($this->harga * self::pajak);
     }
 }
 
