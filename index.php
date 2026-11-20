@@ -6,17 +6,15 @@ require('./Halbi.php');
 use PRAKTIKUM\Marketplace\produk;
 
 //object
-$produk = new produk('h15', 'laptop', 10000000, 5);
-//$produk->kode="h15";
-//$produk->nama="laptop";
-//$produk->harga=10000000;
-//$produk->stok=5;
+$produk = new produk();
 
-echo "nama produk : ".$produk->nama;
+$produk->setkode('P0001')->setnama('Laptop')->setharga(15000000)->setstok(5);
+
+echo "nama produk :". $produk->getnama();
 echo "<br/>";
-echo "harga :".$produk->harga;
+echo "harga :". $produk->getharga();
 echo "<br/>";
-echo "stok:". $produk->stok;
+echo "stok:" . $produk->getstok();
 echo "<br/>";
 echo "pajak:". $produk->pajak() . "%";
 echo "<br/>";
