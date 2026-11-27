@@ -2,7 +2,7 @@
 
 namespace PRAKTIKUM\Marketplace;
 
-class produk
+trait produk
 {
     private string $kode;
     private string $nama;
